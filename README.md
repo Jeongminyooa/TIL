@@ -9,6 +9,6 @@ Today I Learned
 - [LIS](./Algorithm/LIS.md)
 # Git
 - 기본 개념
-    + [Github 사용법 - 기초](./Git/github_Foundation)
+    + [Github 사용법 - 기초](./Git/github_Foundation.md)
 # ETC
 - [Markdown 작성법](./ETC/markdown.md)
