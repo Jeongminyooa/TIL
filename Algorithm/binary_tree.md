@@ -84,12 +84,7 @@ ex) 수식 트리
 ![image](https://user-images.githubusercontent.com/78305431/128490058-40c0cbb9-702c-48fe-9acb-d4abf940e8ea.png)
 :point_right: 후위순회를 사용하여 서브트리의 값을 순환 호출로 계산할 수 있다. 비단말 노드를 방문할 때 양쪽 서브트리의 값을 노드에 저장된 연산자를 이용하여 계산한다.
 
-<details>
-<summary>[코드]</sumarry>
-<div markdown="1">
-
-
-
+## 코드
 ```C
 // 수식 트리
 #include <stdio.h>
@@ -136,9 +131,6 @@ int main(void)
 }
 ```
 
-</div>
-</details>
-
 ## 3. 후위순회 
 1. 왼쪽 서브 트리
 2. 오른쪽 서브 트리
@@ -146,10 +138,7 @@ int main(void)
 
 ex) 디렉터리 용량 계산
 
-<details>
-<summary>[코드]</sumarry>
-<div markdown="1">
-
+## 코드
 ```C
 //BOJ_1991
 #include <stdio.h>
@@ -266,9 +255,6 @@ int main()
 }
 ```
 
-</div>
-</details>
-
 ## 4. 반복 순회
 스택을 이용해 반복으로 중위 순회를 할 수 있다.
 ![image](https://user-images.githubusercontent.com/78305431/128489048-ae29afce-ed93-4622-945c-96fcfbd618c4.png)
@@ -279,10 +265,7 @@ int main()
 ![image](https://user-images.githubusercontent.com/78305431/128488958-23cfe30d-f9ef-4041-a46b-e44379bb9dff.png)
 
 
-<details>
-<summary>[코드]</sumarry>
-<div markdown="1">
-
+## 코드
 ```C
 // 스택과 반복을 이용한 중위순회
 #include <stdio.h>
@@ -339,9 +322,6 @@ int main(void)
 }
 ```
 
-</div>
-</details>
-
 ## 5. 레벨 순회
 큐를 이용해 각 노드를 레벨 순으로 검사하는 순회 방법이다.
 ![image](https://user-images.githubusercontent.com/78305431/128489048-ae29afce-ed93-4622-945c-96fcfbd618c4.png)
@@ -354,9 +334,7 @@ int main(void)
 ![image](https://user-images.githubusercontent.com/78305431/128489587-f379e950-a5e3-4a2f-9a3c-516b2f5fa5d6.png)
 
 
-<details>
-<summary>[코드]</sumarry>
-<div markdown="1">
+## 코드
 
 ```C
 // 큐를 이용한 레벨 순회
@@ -679,9 +657,6 @@ int main()
 }
 ```
 
-</div>
-</details>
-
 ***
 ## ✔️스레드 이진 트리 (threaded binary tree)
 이진 트리의 NULL 링크를 이용해 순환 호출 없이도 노드의 트리들을 순회
@@ -696,10 +671,7 @@ int main()
 
 :point_right: 어차피 NULL 링크의 메모리는 할당되어 있기 때문에 **잉여 메모리를 활용하지 못하는 비효율성**을 모든 링크를 활용함으로써 해결할 수 있다. 중위 순회의 편의성이 증대된다.
 
-<details>
-<summary>[코드]</sumarry>
-<div markdown="1">
-
+## 코드
 ```C
 // 스레드 이진 트리 코드
 #include <stdio.h>
@@ -756,6 +728,3 @@ int main()
 	thread_inorder(exp);
 }
 ```
-
-</div>
-</details>
