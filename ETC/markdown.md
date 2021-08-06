@@ -1,6 +1,6 @@
-# 210803 TIL #1
 # Markdown 작성법
 ```
+210803 TIL #1
 일반 텍스트 기반의 경량 마크업 언어
 ```
 
@@ -384,6 +384,21 @@ content1|content2|content3
 </figure>
 
 ***
+## **13. 글씨색**
+```
+<span style="color:yellow">노란 글씨입니다.</span>
+```
+<span style="color:yellow">노란 글씨입니다.</span>
+***
+## **14. 접기/펼치기**
+```
+<details markdown="1">
+<summary>접기/펼치기</summary>
+
+<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+
+</details>
+```
 
 참고 - https://gist.github.com/ihoneymon/652be052a0727ad59601
 https://github.com/mangdo/TIL/blob/main/ETC/markdown.md#9.-%EB%A7%81%ED%81%AC
