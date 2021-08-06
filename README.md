@@ -8,6 +8,7 @@ Today I Learned
 # Algorithm
 - [LIS](./Algorithm/LIS.md)
 - [Stack](./Algorithm/stack.md)
+- [Tree](./Algorithm/tree.md)
 # Git
 - 기본 개념
     + [Github 사용법 - 기초](./Git/github_Foundation.md)
