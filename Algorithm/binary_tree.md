@@ -84,8 +84,11 @@ ex) 수식 트리
 ![image](https://user-images.githubusercontent.com/78305431/128490058-40c0cbb9-702c-48fe-9acb-d4abf940e8ea.png)
 :point_right: 후위순회를 사용하여 서브트리의 값을 순환 호출로 계산할 수 있다. 비단말 노드를 방문할 때 양쪽 서브트리의 값을 노드에 저장된 연산자를 이용하여 계산한다.
 
-<details markdown="1">
+<details>
 <summary>[코드]</sumarry>
+<div markdown="1">
+
+
 
 ```C
 // 수식 트리
@@ -133,6 +136,7 @@ int main(void)
 }
 ```
 
+</div>
 </details>
 
 ## 3. 후위순회 
@@ -142,8 +146,9 @@ int main(void)
 
 ex) 디렉터리 용량 계산
 
-<details markdown="1">
+<details>
 <summary>[코드]</sumarry>
+<div markdown="1">
 
 ```C
 //BOJ_1991
@@ -261,6 +266,7 @@ int main()
 }
 ```
 
+</div>
 </details>
 
 ## 4. 반복 순회
@@ -273,8 +279,9 @@ int main()
 ![image](https://user-images.githubusercontent.com/78305431/128488958-23cfe30d-f9ef-4041-a46b-e44379bb9dff.png)
 
 
-<details markdown="1">
+<details>
 <summary>[코드]</sumarry>
+<div markdown="1">
 
 ```C
 // 스택과 반복을 이용한 중위순회
@@ -332,6 +339,7 @@ int main(void)
 }
 ```
 
+</div>
 </details>
 
 ## 5. 레벨 순회
@@ -346,8 +354,9 @@ int main(void)
 ![image](https://user-images.githubusercontent.com/78305431/128489587-f379e950-a5e3-4a2f-9a3c-516b2f5fa5d6.png)
 
 
-<details markdown="1">
+<details>
 <summary>[코드]</sumarry>
+<div markdown="1">
 
 ```C
 // 큐를 이용한 레벨 순회
@@ -437,12 +446,14 @@ int main(void)
 }
 ```
 
+</div>
 </details>
 
 ***
 ## ✔️이진트리 연산
-<details markdown="1">
+<details>
 <summary>[코드]</sumarry>
+<div markdown="1">
 
 ```C
 #include <stdio.h>
@@ -668,6 +679,7 @@ int main()
 }
 ```
 
+</div>
 </details>
 
 ***
@@ -684,11 +696,66 @@ int main()
 
 :point_right: 어차피 NULL 링크의 메모리는 할당되어 있기 때문에 **잉여 메모리를 활용하지 못하는 비효율성**을 모든 링크를 활용함으로써 해결할 수 있다. 중위 순회의 편의성이 증대된다.
 
-<details markdown="1">
+<details>
 <summary>[코드]</sumarry>
+<div markdown="1">
 
 ```C
+// 스레드 이진 트리 코드
+#include <stdio.h>
+#include <stdlib.h>
 
+typedef struct TreeNode {
+	int data;
+	struct TreeNode* left, * right;
+	int is_thread;
+}TreeNode;
+
+//p의 중위후속자를 찾는 함수
+TreeNode* find_successor(TreeNode* p)
+{
+	TreeNode* q = p->right;
+
+	if (q == NULL || p->is_thread)
+		return q;
+
+	while (q->left != NULL) q = q->left;
+	return q;
+}
+
+void thread_inorder(TreeNode* t)
+{
+	TreeNode* q;
+	q = t;
+	while (q->left) q = q->left;
+	do {
+		printf("%c ", q->data);
+		q = find_successor(q);
+	} while (q);
+}
+// 7 
+// 3 6 
+// 1 2 4 5 
+// 
+TreeNode n1 = { '1', NULL, NULL, 1 }; // 단말 
+TreeNode n2 = { '2', NULL, NULL, 1 }; // 단말 
+TreeNode n3 = { '3', &n1, &n2, 0 };
+TreeNode n4 = { '4', NULL, NULL, 1 }; // 단말 
+TreeNode n5 = { '5', NULL, NULL, 0 }; // 단말이지만 중위 순회의 마지막 노드이므로 0으로 
+TreeNode n6 = { '6', &n4, &n5, 0 };
+TreeNode n7 = { '7', &n3, &n6, 0 };
+TreeNode* exp = &n7;
+
+int main()
+{
+	//단말 노드의 오른쪽 링크에 중위 후속 노드를 연결한다
+	n1.right = &n3;
+	n2.right = &n7;
+	n4.right = &n6;
+
+	thread_inorder(exp);
+}
 ```
 
+</div>
 </details>
