@@ -8,6 +8,7 @@ Today I Learned
 # Algorithm
 - [LIS](./Algorithm/LIS.md)
 - [Stack](./Algorithm/stack.md)
+- [Sort](./Algorithm/sort.md)
 - [Tree](./Algorithm/tree.md)
 - [Binary Tree](./Algorithm/binary_tree.md)
 # Git
