@@ -12,9 +12,11 @@ Today I Learned
 - [LIS](./Algorithm/LIS.md)
 - [Tree](./Algorithm/tree.md)
 - [Binary Tree](./Algorithm/binary_tree.md)
+
 # Git
 - [Github 사용법 - 기초](./Git/github_Foundation.md)
 - [commit 되돌리기](./Git/github_커밋되돌리기.md)
-= [git log 명령어](./Git/git_log.md)
+- [git log 명령어](./Git/git_log.md)
+
 # ETC
 - [Markdown 작성법](./ETC/markdown.md)
