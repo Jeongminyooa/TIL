@@ -12,6 +12,7 @@ Today I Learned
 - [LIS](./Algorithm/LIS.md)
 - [Tree](./Algorithm/tree.md)
 - [Binary Tree](./Algorithm/binary_tree.md)
+- [Binary Search Tree](./Algorithm/binary_search_tree.md)
 
 # Git
 - [Github 사용법 - 기초](./Git/github_Foundation.md)
