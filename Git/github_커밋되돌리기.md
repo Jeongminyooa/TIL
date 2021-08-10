@@ -1,6 +1,7 @@
-# Github 사용법 - 원격 저장소에 올라간 commit 되돌리기
+# Github 사용법 - commit 되돌리기
 ```
-210806 TIL #4
+210806 TIL #4 원격 저장소에 올라간 commit 되돌리기
+210811 TIL #9 직전 commit 되돌리기
 ```
 ## ✔️commit을 왜 되돌려?
 git으로 버전 관리를 하며 개발하다보면, 작성한 커밋과 푸시 내용이 잘못되어서 이전 상태로 되돌려야 하는 경우가 종종 발생한다.
@@ -11,10 +12,31 @@ git으로 버전 관리를 하며 개발하다보면, 작성한 커밋과 푸시
 
 ![commit_log](https://user-images.githubusercontent.com/78305431/128474243-02db2575-29e1-4c57-a640-4e81bb1cfea2.png)
 
-위와 같이 두 개의 commit을 push까지 한 상와이고 이를 되돌리려는 상황이다.
+위와 같이 두 개의 commit을 push까지 한 상황과 같이 말이다.
 ***
+## ✔️직전 커밋 수정하기
+- `git commit --amend` : 커밋 메시지를 수정하거나 파일을 수정하고 다시 커밋하고 싶을 때 사용한다. 만약 파일을 수정하지 않고 명령어를 수행한다면 커밋 메시지만 수정한다.
+
+## ❓ stage를 깜빡한 경우
+```
+git commit -m "Initial commit"
+git add [forgottem_file]
+git commit --amend
+```
+:point_right: `--amend` 옵션으로 커밋을 고치는 작업은, 이전의 커밋을 완전히 새로 고쳐서 새 커밋으로 변경하는 것을 의미한다. 아주 살짝 빠뜨린 것을 넣거나 변경하는 것을 새 커밋으로 분리하지 않고 하나의 커밋으로 처리하는 것이다.
+***
+
+## ✔️파일 상태 Unstage로 변경하기
+`git reset HEAD <file>` 명령으로 Unstaged 상태로 변경 가능하다.
+
+
+## ✔️수정한 파일 되돌리기
+`git checkout -- <file>` 최근 커밋된 버전 또는 clone했을 떄 내용으로 되돌릴 수 있다.
+***
+
 ## ✔️커밋 이력 되돌리기 (로컬저장소)
 단순히 로컬 저장소에 커밋(commit)만 상황이라면 간단히 해결이 가능하다.
+
 - `git reset <되돌릴 커밋>` : 현재 작업중인 브랜치의 HEAD 포인터를 과거의 특정 시점을 가르키도록 되돌린다. 이 때 변경된 파일들을 스테이지 영역에 보존시킬 수 도 있고 아예 지워버릴 수도 있다.
 
 ![commit_log](https://user-images.githubusercontent.com/78305431/128476503-3e38dea8-c840-42ac-9b02-ba2cf43aadde.png)
