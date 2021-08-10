@@ -13,11 +13,13 @@ Today I Learned
 - [Tree](./Algorithm/tree.md)
 - [Binary Tree](./Algorithm/binary_tree.md)
 - [Binary Search Tree](./Algorithm/binary_search_tree.md)
+- [Priority Queue](./Algorithm/priority_queue.md)
 
 # Git
 - [Github 사용법 - 기초](./Git/github_Foundation.md)
-- [commit 되돌리기](./Git/github_커밋되돌리기.md)
-- [git log 명령어](./Git/git_log.md)
+- [git 기초 - commit 되돌리기](./Git/github_커밋되돌리기.md)
+- [git 기초 - log 명령어](./Git/git_log.md)
+- [git 기초 - 리모트 저장소](./Git/git_remote.md)
 
 # ETC
 - [Markdown 작성법](./ETC/markdown.md)
