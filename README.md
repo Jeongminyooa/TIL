@@ -14,6 +14,7 @@ Today I Learned
 - [Binary Tree](./Algorithm/binary_tree.md)
 - [Binary Search Tree](./Algorithm/binary_search_tree.md)
 - [Priority Queue](./Algorithm/priority_queue.md)
+- [Graph](./Algorithm/graph.md)
 
 # Git
 - [Github 사용법 - 기초](./Git/github_Foundation.md)
