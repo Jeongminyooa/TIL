@@ -16,6 +16,7 @@ Today I Learned
 - [Priority Queue](./Algorithm/priority_queue.md)
 - [Graph](./Algorithm/graph.md)
 - [BFS](./Algorithm/bfs.md)
+- [DFS](./Algorithm/dfs.md)
 
 # Git
 - [Github 사용법 - 기초](./Git/github_Foundation.md)
