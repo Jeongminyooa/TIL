@@ -18,6 +18,37 @@
 
 :point_right: 모든 칸이 큐에 1번씩 들어가므로 칸이 N개일 때 `O(N)`
 
+```C
+void BFS(int n, int m) {
+	int r, c;
+	element e;
+
+	vis[0][0] = 1; // 시작 위치를 방문했다고 표시함
+	e.x = 0;
+	e.y = 0;
+	queue[rear++] = e; // 큐에 푸쉬함
+
+	while (front < rear) {
+		element pop = queue[front++];
+
+		for (int i = 0; i < 4; i++) {
+			int nx = pop.x + dx[i];
+			int ny = pop.y + dy[i];
+
+			if (nx >= 0 && nx < n && ny >= 0 && ny < m ) {
+				if (matrix[nx][ny] == 1 && !vis[nx][ny]) {
+					e.x = nx;
+					e.y = ny;
+					queue[rear++] = e;
+					vis[nx][ny] = 1;
+				}
+			}
+		}
+	}
+	return;
+}
+
+```
 ***
 ## ✔️ 인접 행렬
 ```C
