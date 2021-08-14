@@ -23,6 +23,8 @@ Collection 인터페이스는 List, Set Queue로 크게 3가지 상위 인터페
 ## ✔️ Collection 인터페이스
 컬렉션을 다루는데 가장 기본적인 동작들을 정의하고, 그것을 메소드로 제공하고 있다.
 
+![image](https://user-images.githubusercontent.com/78305431/129388706-e1985323-5d69-4bd5-a086-340d62164091.png)
+
 ***
 
 ## ✔️ Collection 인터페이스 특징
@@ -79,3 +81,10 @@ Collection 인터페이스는 List, Set Queue로 크게 3가지 상위 인터페
 
 ## ❓ 배열과의 차이점
 정적 메모리 할당이 아닌 동적 메모리 할당을 한다. 공간이 필요한 만큼 추가할 수 있다.
+***
+
+참고 - https://www.crocus.co.kr/1553
+
+https://gangnam-americano.tistory.com/41
+
+http://tcpschool.com/java/java_collectionFramework_concept
