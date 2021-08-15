@@ -26,6 +26,8 @@ Today I Learned
 
 # JAVA
 - [Collection](./JAVA/collection.md)
+- [Interface vs Abstract Class](./JAVA/interface-vs-abstract-class.md)
 
 # ETC
 - [Markdown 작성법](./ETC/markdown.md)
+- [Github 프로필 관리하기](./ETC/Github-profile-setting.md)
