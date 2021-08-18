@@ -455,6 +455,186 @@ public class Main {
 </details>
 
 ***
+## ✔️ 정렬
+java에서의 정렬은 특별한 정의가 되어있지 않는 한 오름차순을 기준으로 한다. 
+
+compare 혹은 compareTo를 사용하여 원소를 비교한다면 **양수**가 나올 것이다. 이는 곧 **선행 원소가 후행 원소보다 크다는 뜻**이 된다. 그러므로 비교해서 양수가 나올 경우 **두 원소의 위치를 바꾼다**는 것이다.
+
+[두 수의 비교 결과에 따른 작동 방식]
+- 양수 : 위치를 교환한다.
+- 음수 : 위치를 교환하지 않는다.
+
+객체를 비교해 값을 정렬하고자 할 때 Comparator와 Comparable을 구현해주면 된다. 비교 기준이 있어야 하기 때문이다.
+
+## ✔️ Comparable 정렬
+```java
+class MyInteger implements Comparable<MyInteger> {
+	int value;
+	
+	public MyInteger(int value) {
+		this.value = value;
+	}
+ 
+	// 자기 자신의 value을 기준으로 파라미터 값과의 차이를 반환한다.
+	@Override
+	public int compareTo(MyInteger o) {
+		return this.value - o.value;
+	}
+	
+}
+```
+테스트를 위해 정렬 메소드로 자주 쓰이는 Arrays.sort() 메소드를 이용해보자
+
+[Comparable을 이용한 정렬]
+```java
+import java.util.Arrays;
+ 
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		MyInteger[] arr = new MyInteger[10];
+		
+		// 객체 배열 초기화 (랜덤 값으로) 
+		for(int i = 0; i < 10; i++) {
+			arr[i] = new MyInteger((int)(Math.random() * 100));
+		}
+ 
+		// 정렬 이전
+		System.out.print("정렬 전 : ");
+		for(int i = 0; i < 10; i++) {
+			System.out.print(arr[i].value + " ");
+		}
+		System.out.println();
+		
+		Arrays.sort(arr);
+        
+		// 정렬 이후
+		System.out.print("정렬 후 : ");
+		for(int i = 0; i < 10; i++) {
+			System.out.print(arr[i].value + " ");
+		}
+		System.out.println();
+	}
+	
+}
+ 
+class MyInteger implements Comparable<MyInteger> {
+	int value;
+	
+	public MyInteger(int value) {
+		this.value = value;
+	}
+	
+	@Override
+	public int compareTo(MyInteger o) {
+		return this.value - o.value;
+	}
+	
+}
+```
+적절하게 값이 나오는 것을 확인할 수 있다. 만약 클래스 내에서 구현을 해주지 않는다면 예외가 던져진다. 
+
+## ✔️ Comparator 정렬
+익명 객체를 생성해 Comparator를 구현해준다. 그런데 어떻게 Arrays.sort()에서 익명 객체를 기준으로 정렬을 시킬까?
+```java
+import java.util.Arrays;
+import java.util.Comparator;
+ 
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		MyInteger[] arr = new MyInteger[10];
+		
+		// 객체 배열 초기화 (랜덤 값으로) 
+		for(int i = 0; i < 10; i++) {
+			arr[i] = new MyInteger((int)(Math.random() * 100));
+		}
+	}
+ 
+	
+	static Comparator<MyInteger> comp = new Comparator<MyInteger>() {
+		
+		@Override
+		public int compare(MyInteger o1, MyInteger o2) {
+			return o1.value - o2.value;
+		}
+	};
+}
+```
+다행히도 Arrays.sort() 에는 단순히 배열만 파라미터로 받는 것이 아니라 Comparator 또한 파라미터로 받기도 한다.
+```java
+import java.util.Arrays;
+import java.util.Comparator;
+ 
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		MyInteger[] arr = new MyInteger[10];
+		
+		// 객체 배열 초기화 (랜덤 값으로) 
+		for(int i = 0; i < 10; i++) {
+			arr[i] = new MyInteger((int)(Math.random() * 100));
+		}
+ 
+		// 정렬 이전
+		System.out.print("정렬 전 : ");
+		for(int i = 0; i < 10; i++) {
+			System.out.print(arr[i].value + " ");
+		}
+		System.out.println();
+		
+		Arrays.sort(arr, comp);		// MyInteger에 대한 Comparator을 구현한 익명객체를 넘겨줌
+        
+		// 정렬 이후
+		System.out.print("정렬 후 : ");
+		for(int i = 0; i < 10; i++) {
+			System.out.print(arr[i].value + " ");
+		}
+		System.out.println();
+	}
+ 
+	
+	static Comparator<MyInteger> comp = new Comparator<MyInteger>() {
+		
+		@Override
+		public int compare(MyInteger o1, MyInteger o2) {
+			return o1.value - o2.value;
+		}
+	};
+}
+ 
+ 
+class MyInteger {
+	int value;
+	
+	public MyInteger(int value) {
+		this.value = value;
+	}
+	
+	
+}
+```
+### ❓ 내림차순으로 정렬하기
+```java
+// Comparable
+public int compareTo(MyClass o) {
+	return -(this.value - o.value);
+}
+ 
+// Comparator
+public int compare(Myclass o1, MyClass o2) {
+	return -(o1.value - o2.value);
+}
+```
+부호만 바꿔준다면 ok
+
+Comparator는 익명 객체를 여러개를 생성할 수 있지만, Comparable의 경우 compareTo 하나 밖에 구현할 수 없다. 보통은 Comparable은 가장 기본적인 설정으로 구현하는 경우가 많고, Comparator은 여러개 생성할 수 있다보니 특별한 정렬을 원할 때 많이 쓰인다.
+
+:point_right: Comparable은 기본 순서를 정의하는데 사용되며, Comparator은 특별한 기준의 순서를 정의할 때 사용된다.
+***
 참고 - https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html#method.summary
 
 https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html#method.summary
