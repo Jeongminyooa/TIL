@@ -29,7 +29,7 @@ Today I Learned
     + [Queue Interface](./JAVA/queue-interface.md)
 - [Interface vs Abstract Class](./JAVA/interface-vs-abstract-class.md)
 - [Generic](./JAVA/generic.md)
-- [Comparable & Comparator](./JAVA/Comparable-Comparator)
+- [Comparable & Comparator](./JAVA/Comparable-Comparator.md)
 
 # ETC
 - [Markdown 작성법](./ETC/markdown.md)
