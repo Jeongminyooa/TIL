@@ -414,7 +414,8 @@ public class Main {
 
 ***
 3. &lt;?>
-<? extends Object> 와 마찬가지. Object는 자바에서의 모든 API 및 사용자 클래스의 최상위 타입이다.
+
+`<? extends Object>` 와 마찬가지. Object는 자바에서의 모든 API 및 사용자 클래스의 최상위 타입이다.
 
 즉, 묵시적으로 Object 클래스를 상속받는 것이나 다름 없다. 어떤 타입이든 상관이 없고 기능 사용에 관심이 있는 경우에 와일드 카드로 사용한다!
 
