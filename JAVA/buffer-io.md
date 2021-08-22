@@ -158,7 +158,12 @@ import java.io.*;
 
 class BufferedWriterExample {
 	public static void main(String[] args) throws IOExeption {
+        // 1) 콘솔창 출력
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        // 2) 파일 출력
     	BufferedWriter bw = new BufferedWriter(new FileWriter("bufferedWriter.txt"));
+        
         bw.write("hello");
         bw.newLine(); //개행
         bw.write("I am writing\n"); //개행과 함께 출력
