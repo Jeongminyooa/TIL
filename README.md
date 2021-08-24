@@ -37,4 +37,4 @@ Today I Learned
 
 # ETC
 - [Markdown 작성법](./ETC/markdown.md)
-- [Github 프로필 관리하기](./ETC/Github-profile-setting.md)
+- [Github 프로필 관리하기](./ETC/GitHub-profile-setting.md)
