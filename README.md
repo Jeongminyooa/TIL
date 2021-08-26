@@ -35,6 +35,9 @@ Today I Learned
 - [Comparable & Comparator](./JAVA/Comparable-Comparator.md)
 - [Buffer I/O](./JAVA/buffer-io.md)
 
+# Math
+- [Modular Arthmetic](/Math/modular-arthmetic.md)
+
 # ETC
 - [Markdown 작성법](./ETC/markdown.md)
 - [Github 프로필 관리하기](./ETC/GitHub-profile-setting.md)
