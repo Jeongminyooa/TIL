@@ -26,6 +26,7 @@ Today I Learned
 - [git 기초 - commit 되돌리기](./Git/github_커밋되돌리기.md)
 - [git 기초 - log 명령어](./Git/git_log.md)
 - [git 기초 - 리모트 저장소](./Git/git_remote.md)
+- [git 기초 - tag](./Git/git-tag.md)
 
 # JAVA
 - [Collection](./JAVA/collection.md)
