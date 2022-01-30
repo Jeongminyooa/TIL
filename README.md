@@ -20,6 +20,7 @@ Today I Learned
 - [BFS](./Algorithm/bfs.md)
 - [DFS](./Algorithm/dfs.md)
 - [DP](./Algorithm/dp.md)
+- [Greedy](./Algorithm/greedy.md)
 
 # Git
 - [Github 사용법 - 기초](./Git/github_Foundation.md)
